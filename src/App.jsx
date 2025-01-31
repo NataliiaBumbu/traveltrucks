@@ -1,16 +1,19 @@
 import { Routes, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import CatalogPage from "./pages/CatalogPage";
-import CamperDetailsPage from "./pages/CamperDetailsPage";
+import HomePage from "./pages/HomePage/HomePage";
+import TopBar from "./components/TopBar/TopBar";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/catalog" element={<CatalogPage />} />
-      <Route path="/catalog/:id" element={<CamperDetailsPage />} />
-    </Routes>
-  );
+    <>
+    
+     <Routes>
+       <Route path='/' element={<TopBar/>}>
+        <Route index element={<HomePage />} />
+      </Route>     
+        </Routes>
+  
+</>
+)
 }
 
 export default App;
